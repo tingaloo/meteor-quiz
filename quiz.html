@@ -1,8 +1,13 @@
-
+<head>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+</head>
 
 <template name="home">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <h1><a href="{{pathFor route='quiz'}}">Quiz 1</a></h1>
+  <h2><a href="{{pathFor route='quiz2'}}">Quiz 2</a></h2>
+  <h3><a href="{{pathFor route='quiz3'}}">Quiz 3</a></h3>
+  <h4>Quiz 4</h4>
+  <h5>Quiz 5</h5>
 </template>
 
 <template name="register">
@@ -24,18 +29,13 @@
 </template>
 
 <template name="main">
-  <h1>Quiz</h1>
-  {{> navigation}}
+  <h1>Ten Quizzes, 100 Questions</h1>
+  <!-- {{> navigation}} -->
   {{> yield}}
 </template>
 
 <template name="quiz">
-<!--   <ul>
-    {{#each Question}}
-      {{> question}}
-    {{/each}}
-  </ul> -->
-
+  <h1>Keyword: Don't Think Too Hard</h1>
   <p>Question: {{Question.question}}</p>
   <p><button id="startQuiz">Start quiz</button></p>
 
@@ -43,6 +43,21 @@
   <form class="answer">
     <input type="text" name="text" placeholder="Type your answer here" />
   </form>
+  <a href="{{pathFor route='home'}}">Home</a>
+
+</template>
+
+<template name="quiz2">
+  <h1>Keyword: Movies</h1>
+  <p>Question: {{Question.question}}</p>
+  <p><button id="startQuiz">Start quiz</button></p>
+
+
+  <form class="answer">
+    <input type="text" name="text" placeholder="Type your answer here" />
+  </form>
+  <a href="{{pathFor route='home'}}">Home</a>
+
 </template>
 
 <template name="question">
@@ -54,9 +69,9 @@
     <li><a href="{{pathFor route='home'}}">Home</a></li>
     {{#if currentUser}}
       <li><a href="#" class="logout">Logout</a></li>
-      <li><a href="{{pathFor route='quiz'}}">Quiz</a></li>
     {{/if}}
     <li><a href="{{pathFor route='register'}}">Register</a></li>
     <li><a href="{{pathFor route='login'}}">Login</a></li>
+
   </ul>
 </template>
