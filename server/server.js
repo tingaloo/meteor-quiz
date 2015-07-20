@@ -27,7 +27,7 @@ if (Meteor.isServer){
   }
 
   if (QuestionList2.find().count() === 0) {
-  var names2 = [
+  names = [
       ["The man was in a Bourne movie and shoots arrows in another.",
       "jeremy renner"],
       ["This superhero died in one movie, and lives in another superhero movie. Vague Hint: Previous answer",
@@ -52,7 +52,7 @@ if (Meteor.isServer){
       "annie hall"]
     ];
 
-    _.each(names2, function (name) {
+    _.each(names, function (name) {
       QuestionList2.insert({
         question: name[0],
         answer: name[1]
@@ -61,7 +61,7 @@ if (Meteor.isServer){
   }
 
   if (QuestionList3.find().count() === 0) {
-  var names3 = [
+  names = [
       ["Don't overthink the think, overdo the __",
       "do"],
       ["What is the acronym for an all javascript stack?",
@@ -79,7 +79,7 @@ if (Meteor.isServer){
       "scott pilgrim"]
     ];
 
-    _.each(names3, function (name) {
+    _.each(names, function (name) {
       QuestionList3.insert({
         question: name[0],
         answer: name[1]

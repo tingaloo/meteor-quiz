@@ -16,6 +16,7 @@ if (Meteor.isClient) {
     Number: function(){
       return Session.get("questionNumber");
     }
+
   });
 
   Template.quiz.events({
@@ -26,12 +27,8 @@ if (Meteor.isClient) {
       var currentQuestion = myQuestions[currentIndex];
       var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
-      // changeQuestion(output);
-      currentIndex=output;
-      currentQuestion=myQuestions[currentIndex];
-      Session.set("questionNumber",currentIndex + 1);
-      Session.set("nextQuestion", currentQuestion);
 
+      console.log(currentQuestion.question);
     },
 
     'click #startQuiz' : function(){
@@ -41,7 +38,7 @@ if (Meteor.isClient) {
       //loads questions
       myQuestions =grabQuestionSet("One");
       currentIndex=0;
-      iterateQuestions(myQuestions);
+      initializeQuestions(myQuestions);
       $(':input').focus();
     }
   })

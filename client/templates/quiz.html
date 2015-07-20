@@ -1,18 +1,24 @@
 <template name="quiz">
   <div class="quiz">
-  <h1 class="quiz-title">Baby Steps</h1>
+    <h1 class="quiz-title">Baby Steps</h1>
 
-  <p><button id="startQuiz">Start!</button>
-  </p>
-  {{#if startQuiz}}
-  <div class="question-box">
-  <h2>Question {{Number}}</h2>
-  <p>{{Question.question}}</p>
-  </div>
+    <p><button id="startQuiz">Start!</button>
+    </p>
+    <div class="progress-bar">
+        <span class="circle"></span>
 
-  <form class="answer">
-    <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
-  </form>
-  {{/if}}
+      </div>
+    {{#if startQuiz}}
+      <div class="question-box">
+      <h2 class="question-header">Question {{Number}}</h2>
+
+      <p class="question">{{Question.question}}</p>
+      </div>
+
+      <form class="answer">
+        <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
+      </form>
+
+
   </div>
 </template>
