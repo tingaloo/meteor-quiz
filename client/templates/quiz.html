@@ -4,11 +4,11 @@
 
     <p><button id="startQuiz">Start!</button>
     </p>
+
+    {{#if startQuiz}}
     <div class="progress-bar">
         <span class="circle"></span>
-
       </div>
-    {{#if startQuiz}}
       <div class="question-box">
       <h2 class="question-header">Question {{Number}}</h2>
 
@@ -19,6 +19,7 @@
         <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
       </form>
 
+    {{/if}}
 
   </div>
 </template>

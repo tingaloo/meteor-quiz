@@ -39,7 +39,6 @@ if (Meteor.isClient) {
       myQuestions =grabQuestionSet("One");
       currentIndex=0;
       initializeQuestions(myQuestions);
-      $(':input').focus();
     }
   })
 

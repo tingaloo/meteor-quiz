@@ -4,20 +4,22 @@
 
   <p><button id="startQuiz">Start!</button>
   </p>
+
   {{#if startQuiz}}
-  <div class="question-box">
-  <h2>Question {{Number}}</h2>
-  <p>{{Question.question}}</p>
-  </div>
+    <div class="progress-bar">
+        <span class="circle"></span>
+      </div>
+      <div class="question-box">
+      <h2 class="question-header">Question {{Number}}</h2>
 
+      <p class="question">{{Question.question}}</p>
+      </div>
 
-  <form class="answer">
-    <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
-  </form>
-  {{/if}}
-  {{#if incorrect}}
-    <p>Ha! Gottem!</p>
-  {{/if}}
+      <form class="answer">
+        <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
+      </form>
+    {{/if}}
+
   </div>
 
 </template>

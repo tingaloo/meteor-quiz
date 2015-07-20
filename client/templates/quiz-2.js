@@ -1,9 +1,6 @@
 if (Meteor.isClient) {
-  var currentIndex = 0;
-  var myQuestions;
-  var currentQuestion;
-  var answer;
-  var currentUser;
+  // var currentIndex = 0;
+
 
     Template.quiz2.rendered= function(){
 
@@ -24,16 +21,10 @@ if (Meteor.isClient) {
 
     'submit form': function(event, template){
       event.preventDefault();
-      answer = event.target.text.value;
-      currentUser = Meteor.userId();
-      currentQuestion = myQuestions[currentIndex];
+      var answer = event.target.text.value;
+      var currentQuestion = myQuestions[currentIndex];
+      var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
-      var output=checkAnswer(answer, currentQuestion, myQuestions, template);
-
-      currentIndex=output;
-      currentQuestion=myQuestions[currentIndex];
-      Session.set("questionNumber",currentIndex + 1);
-      Session.set("nextQuestion", currentQuestion);
     },
 
     'click #startQuiz' : function(){
@@ -41,14 +32,8 @@ if (Meteor.isClient) {
       startQuizAnimate();
 
       myQuestions =grabQuestionSet("Two");
-          currentIndex=0;
-          iterateQuestions(myQuestions);
-    },
-
-    'click a' : function(event){
-      event.preventDefault();
-      console.log("quiz paused");
-      Session.set("quizStarted", false);
+      currentIndex=0;
+          initializeQuestions(myQuestions);
     }
 
 
