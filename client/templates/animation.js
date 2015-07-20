@@ -6,7 +6,9 @@ startQuizAnimate = function(){
           $(this).toggle('fast');
           //quiz template shows after animation finishes
           Session.set("quizStarted", true);
-          $('.answerBox').focus();
+          Tracker.afterFlush(function(){
+    $('.answerBox').focus();
+  });
         }
       );
   }

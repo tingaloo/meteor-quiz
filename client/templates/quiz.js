@@ -26,10 +26,13 @@ if (Meteor.isClient) {
       var currentUser = Meteor.userId();
       var currentQuestion = myQuestions[currentIndex];
 
-      checkAnswer(answer, currentQuestion, myQuestions, template);
+      var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
       // changeQuestion(output);
-
+      currentIndex=output;
+      currentQuestion=myQuestions[currentIndex];
+      Session.set("questionNumber",currentIndex + 1);
+      Session.set("nextQuestion", currentQuestion);
 
     },
 
