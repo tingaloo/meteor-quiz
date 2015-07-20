@@ -1,0 +1,23 @@
+<template name="quiz2">
+  <div class="quiz">
+    <h1 class="quiz-title">Keyword: Movies</h1>
+
+  <p><button id="startQuiz">Start!</button>
+  </p>
+  {{#if startQuiz}}
+  <div class="question-box">
+  <h2>Question {{Number}}</h2>
+  <p>{{Question.question}}</p>
+  </div>
+
+
+  <form class="answer">
+    <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
+  </form>
+  {{/if}}
+  {{#if incorrect}}
+    <p>Ha! Gottem!</p>
+  {{/if}}
+  </div>
+
+</template>

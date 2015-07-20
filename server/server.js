@@ -1,7 +1,3 @@
-// server side
-QuestionList = new Mongo.Collection("questionlist");
-QuestionList2 = new Mongo.Collection("questionlist2");
-QuestionList3 = new Mongo.Collection("questionlist3");
 
 if (Meteor.isServer){
   Meteor.startup(function () {
@@ -16,7 +12,10 @@ if (Meteor.isServer){
       ["The American who wrote a book on the Spanish Civil War in 1940",
       "hemingway"],
       ["Two black detectives that wound up in Fargo",
-      "key and peele"]
+      "key and peele"],
+      ["Single-take movie that follows a shallow actor",
+      "birdman"],
+
     ];
 
     _.each(names, function (name) {
@@ -48,7 +47,9 @@ if (Meteor.isServer){
       ["You can bring me the boy. You can bring me the boy. You can bring me the boy.",
       "babadook"],
       ["'You said it yourself bitch, we're the ________",
-      "guardians of the galaxy"]
+      "guardians of the galaxy"],
+      ["A rom-com featuring everybody's favorite neurotic director",
+      "annie hall"]
     ];
 
     _.each(names2, function (name) {
@@ -69,9 +70,8 @@ if (Meteor.isServer){
       "kentucky route zero"],
       ["Brooklyn's favorite vegetable, hint: use Bing",
       "pizza"],
-      ["Who will be the next president? Hint: he avoids color",
-      "donald trump"],
-      ["A podcast that airs after Car Talk on NPR"
+      ["Who will be the next president? hint: he's rich","donald trump"],
+      ["A podcast that airs after Car Talk on NPR",
       "wait wait don't tell me"],
       ["The most popular *nix system",
       'osx'],

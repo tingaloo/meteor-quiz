@@ -1,0 +1,42 @@
+.quiz{
+  > .quiz-title {
+    font-size:2em;
+  }
+
+  > p > #startQuiz {
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
+
+    font-family:'Open sans';
+
+    background-color: none;
+
+    font-size: 2em;
+    padding: 10px 10px;
+
+    border: solid 2px black;
+    border-radius: 2%;
+    color:black;
+    background-color: white;
+    width: 200px;
+
+    -webkit-transition: background-color 500ms ease-in-out;
+    -moz-transition: background-color 500ms ease-in-out;
+    -o-transition: background-color 500ms ease-in-out;
+    -ms-transition: background-color 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
+
+    &:hover {
+
+
+      background-color:black;
+      color: white;
+    }
+  }
+
+  >.question-box{
+    height:100px;
+  }
+
+}

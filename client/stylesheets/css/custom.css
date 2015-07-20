@@ -1,0 +1,42 @@
+/* CSS declarations go here */
+h1, h2, h3, h4, h5, p, li {
+  font-family: lobster two, cursive; }
+
+.body {
+  text-align: center; }
+
+.title {
+  font-size: 3em; }
+
+.nav {
+  padding: 0px 0px; }
+  .nav > li {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em; }
+
+.quiz > .quiz-title {
+  font-size: 2em; }
+.quiz > p > #startQuiz {
+  font-family: 'Open sans';
+  background-color: none;
+  font-size: 2em;
+  padding: 10px 10px;
+  border: solid 2px black;
+  border-radius: 2%;
+  color: black;
+  background-color: white;
+  width: 200px;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
+  .quiz > p > #startQuiz:hover {
+    background-color: black;
+    color: white; }
+.quiz > .question-box {
+  height: 100px; }
+
+/*# sourceMappingURL=custom.css.map */
