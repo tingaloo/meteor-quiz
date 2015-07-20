@@ -55,9 +55,9 @@ iterateQuestions = function(myQuestions){
       return myQuestions;
 }
 
-changeQuestion = function(output){
-  currentIndex=output;
-      currentQuestion=myQuestions[currentIndex];
-      Session.set("questionNumber",currentIndex + 1);
-      Session.set("nextQuestion", currentQuestion);
+changeQuestion = function(num){
+  currentIndex=num;
+  currentQuestion=myQuestions[currentIndex];
+  Session.set("questionNumber",currentIndex + 1);
+  Session.set("nextQuestion", currentQuestion);
 }

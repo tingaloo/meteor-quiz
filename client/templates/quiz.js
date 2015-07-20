@@ -23,9 +23,7 @@ if (Meteor.isClient) {
     'submit form': function(event, template){
       event.preventDefault();
       var answer = event.target.text.value;
-      var currentUser = Meteor.userId();
       var currentQuestion = myQuestions[currentIndex];
-
       var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
       // changeQuestion(output);
