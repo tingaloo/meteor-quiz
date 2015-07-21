@@ -6,6 +6,7 @@ if (Meteor.isClient) {
 
       grabQuestionSet("Two");
       loadCorrectNotifications();
+      loadWrongNotifications();
       Session.set("questionNumber", 1);
   }
 
@@ -37,7 +38,9 @@ if (Meteor.isClient) {
 
       myQuestions =grabQuestionSet("Two");
       myCorrectNotifications =loadCorrectNotifications();
+      myWrongNotifications=loadWrongNotifications();
       Session.set("notification", " ");
+
       currentIndex=0;
           initializeQuestions(myQuestions);
     }

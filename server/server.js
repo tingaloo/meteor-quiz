@@ -80,6 +80,25 @@ if (Meteor.isServer){
     });
   }
 
+  if (WrongNotifications.find().count() === 0) {
+    responses = [
+      ["Damn."],
+      ["Keep at em!"],
+      ["Turn Right!"],
+      ["Doh!"],
+      ["Ha! Goteeeem"],
+      ["Mmm..nah"],
+      ["Nope"],
+      ["Close, but no cigar"],
+      ["yada yada yada"]
+    ];
+
+    _.each(responses, function (response) {
+      WrongNotifications.insert({
+        response: response[0]
+      });
+    });
+  }
 
 });
 
@@ -92,6 +111,9 @@ if (Meteor.isServer){
   },
   "loadCorrectNotifications":function(){
     return CorrectNotifications.find().fetch();
+  },
+  "loadWrongNotifications":function(){
+    return WrongNotifications.find().fetch();
   }
   });
 }

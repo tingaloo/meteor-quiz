@@ -51,6 +51,7 @@ answerAnimate = function(correct){
       return "right";
       //return "correct"
     } else {
+      wrongAnswerNotification();
 
       answerAnimate("incorrect");
       template.find("form").reset();
@@ -63,7 +64,7 @@ answerAnimate = function(correct){
 nextQuestion = function(num){
   Session.set("notification", myCorrectNotifications[Math.floor(Math.random() * myCorrectNotifications.length)]);
   $('.question-header').slideUp("300", function(){
-    $('.notification').toggle();
+    $('.notification > p').slideUp();
   });
 
   $('.question').slideUp("300", function() {
@@ -72,9 +73,8 @@ nextQuestion = function(num){
     currentQuestion=myQuestions[currentIndex];
     Session.set("questionNumber",currentIndex + 1);
     Session.set("nextQuestion", currentQuestion);
+    Session.set("notification", " ");
 
-
-      Session.set("notification", " ");
     $('.progress-bar').append($newcircle);
     $('p').fadeIn();
     $('h2').fadeIn();

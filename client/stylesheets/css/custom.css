@@ -50,5 +50,9 @@ h1, h2, h3, h4, h5, p, li {
     border-radius: 50%;
     margin-right: 5px;
     float: left; }
+.quiz > .notification {
+  height: 50px; }
+  .quiz > .notification > p {
+    margin: 0px 0px; }
 
 /*# sourceMappingURL=custom.css.map */

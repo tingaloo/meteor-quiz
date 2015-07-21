@@ -5,6 +5,7 @@ if (Meteor.isClient) {
 
       grabQuestionSet("One");
       loadCorrectNotifications();
+      loadWrongNotifications();
       Session.set("questionNumber", 1);
   }
 
@@ -31,7 +32,6 @@ if (Meteor.isClient) {
       var currentQuestion = myQuestions[currentIndex];
       var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
-      Session.set("answerSubmitted", true);
       // $('.notification').slideUp("300");
       // Session.set("answerSubmitted", false);
       console.log(currentQuestion.question);
@@ -44,6 +44,7 @@ if (Meteor.isClient) {
       //loads questions
       myQuestions =grabQuestionSet("One");
       myCorrectNotifications =loadCorrectNotifications();
+      myWrongNotifications=loadWrongNotifications();
       Session.set("notification", " ");
 
     //   var correctNotification= myNotifications[0];

@@ -1,6 +1,7 @@
 var currentIndex=0;
 var myQuestions;
-var myNotifications;
+var myCorrectNotifications;
+var myWrongNotifications;
 
 initializeQuestions = function(myQuestions){
     currentIndex=0;
@@ -41,8 +42,20 @@ loadCorrectNotifications = function(){
    console.warn("error getting notifications");
   }else{
 
-    myNotifications = result;
+    myCorrectNotifications = result;
   }
   });
-    return myNotifications;
+    return myCorrectNotifications;
+}
+
+loadWrongNotifications=function(){
+  Meteor.call("loadWrongNotifications",function(error,result){
+  if(error){
+   console.warn("error getting notifications");
+  }else{
+
+    myWrongNotifications = result;
+  }
+  });
+    return myWrongNotifications;
 }
