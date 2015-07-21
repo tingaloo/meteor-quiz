@@ -1,14 +1,16 @@
 <template name="quiz">
   <div class="quiz">
-    <h1 class="quiz-title">Baby Steps</h1>
+    <!-- <h1 class="quiz-title">Baby Steps</h1> -->
 
-    <p><button id="startQuiz">Start!</button>
+    <p id="startQuiz"><a href="#">Start!</a>
     </p>
 
+
+
     {{#if startQuiz}}
-    <div class="progress-bar">
+    <!-- <div class="progress-bar">
         <span class="circle"></span>
-      </div>
+      </div> -->
       <div class="question-box">
       <h2 class="question-header">Question {{Number}}</h2>
 
@@ -18,10 +20,11 @@
         <div class="notification"><p>{{Notification.response}}</p></div>
 
       <form class="answer">
-        <input type="text" class="answerBox" name="text" placeholder="Type your answer here" />
+        <input type="text" class="answerBox" name="text" placeholder="" />
       </form>
 
     {{/if}}
-
+    <br>
+    <p id="back"><a href="{{pathFor route='home'}}">Go Back</a></p>
   </div>
 </template>

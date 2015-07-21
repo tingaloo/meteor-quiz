@@ -1,5 +1,5 @@
 startQuizAnimate = function(){
-    $("#startQuiz").animate({
+    $("#startQuiz a").animate({
         opacity:0,
         boxShadow: '0 0 100px #00FF00'
       },500,"linear",function() {

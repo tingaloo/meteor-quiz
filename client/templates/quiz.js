@@ -3,10 +3,11 @@ if (Meteor.isClient) {
 
     Template.quiz.rendered= function(){
 
-      grabQuestionSet("One");
+      grabQuestionSet(Session.get("quizNumber"));
       loadCorrectNotifications();
       loadWrongNotifications();
       Session.set("questionNumber", 1);
+      Session.set("quizStarted", false);
   }
 
 
@@ -20,6 +21,9 @@ if (Meteor.isClient) {
     },
     Notification: function(){
       return Session.get("notification");
+    },
+    QuizNumber: function(){
+      return Session.get("quizNumber");
     }
 
   });
@@ -32,8 +36,6 @@ if (Meteor.isClient) {
       var currentQuestion = myQuestions[currentIndex];
       var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
-      // $('.notification').slideUp("300");
-      // Session.set("answerSubmitted", false);
       console.log(currentQuestion.question);
     },
 
@@ -42,16 +44,20 @@ if (Meteor.isClient) {
       startQuizAnimate();
 
       //loads questions
-      myQuestions =grabQuestionSet("One");
+      myQuestions =grabQuestionSet(Session.get("quizNumber"));
       myCorrectNotifications =loadCorrectNotifications();
       myWrongNotifications=loadWrongNotifications();
       Session.set("notification", " ");
 
-    //   var correctNotification= myNotifications[0];
-    // Session.set("notification",correctNotification.response);
-    // initializeCorrectResponses(myNotifications);
       currentIndex=0;
       initializeQuestions(myQuestions);
+    },
+
+    'click #back' : function(event){
+      event.preventDefault();
+      $('p').slideUp(function(){
+        Router.go('/');
+      });
     }
   })
 

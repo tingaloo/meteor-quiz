@@ -19,10 +19,12 @@ initializeCorrectResponses = function(myNotifications){
 }
 
 
-  gameOver = function(){
-    // alert("congrats, you can go back to work or try the next quiz!");
-    Router.go('home');
-  }
+gameOver = function(){
+    $('.quiz').slideUp(function(){
+      Router.go('home');
+    });
+
+}
 
 
 grabQuestionSet = function(number){

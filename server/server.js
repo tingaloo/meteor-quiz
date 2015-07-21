@@ -7,14 +7,14 @@ if (Meteor.isServer){
       "portland"],
       ["Shake Shack lives in this park complete with ping pong tables",
       "madison square park"],
-      ["Two words: Clinton Affair ",
-      "monica lewinsky"],
-      ["The American who wrote a book on the Spanish Civil War in 1940",
+      ["Before Reddit, there was _____ ",
+      "digg"],
+      ["An American who served on an ambulance during the Spanish Civil War",
       "hemingway"],
-      ["Two black detectives that wound up in Fargo",
+      ["Two black detectives that wind up in Fargo",
       "key and peele"],
-      ["Single-take movie that follows a shallow actor",
-      "birdman"],
+      ["Single-take movie starring a superhero",
+      "birdman"]
 
     ];
 
@@ -28,9 +28,9 @@ if (Meteor.isServer){
 
   if (QuestionList2.find().count() === 0) {
   names = [
-      ["The man was in a Bourne movie and shoots arrows in another.",
+      ["ACTOR: The man can both defuse bombs and fire arrows",
       "jeremy renner"],
-      ["This superhero died in one movie, and lives in another superhero movie. Vague Hint: Previous answer",
+      ["CHARACTER: This man died in one movie, and lives in another superhero movie. Vague Hint: Previous answer",
       "quicksilver"],
       ["An indie feel-good movie with Steve Carrell",
       "little miss sunshine"],
@@ -38,11 +38,11 @@ if (Meteor.isServer){
       "midnight in paris"],
       ["_____, New York. Hint: PSH",
       "synecdoche"],
-      ["A WW2 movie featuring the man from Cast Away",
+      ["A war movie featuring the man from Cast Away",
       "saving private ryan"],
       ["If your life were a t.v show",
       "the truman show"],
-      ["you're tearing me apart",
+      ["lisa, you're tearing me apart",
       "the room"],
       ["You can bring me the boy. You can bring me the boy. You can bring me the boy.",
       "babadook"],
@@ -70,7 +70,9 @@ if (Meteor.isServer){
       ["Got em!"],
       ["Yup!"],
       ["Yah!"],
-      ["Mhm"]
+      ["Mhm"],
+      ["You go girl!"],
+      ["slammin"]
     ];
 
     _.each(responses, function (response) {
@@ -90,7 +92,12 @@ if (Meteor.isServer){
       ["Mmm..nah"],
       ["Nope"],
       ["Close, but no cigar"],
-      ["yada yada yada"]
+      ["yada yada yada"],
+      ["not smooth"],
+      ["heh"],
+      ["woops"],
+      ["no rush"],
+      ["here's a hint, and not."]
     ];
 
     _.each(responses, function (response) {

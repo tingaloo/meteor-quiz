@@ -1,5 +1,19 @@
+
+if (Meteor.isClient) {
+
  Template.home.events({
 'click a' : function(event){
-      Session.set("quizStarted", false);
-    }
-})
+  // event.preventDefault();
+
+    Session.set("quizStarted", false);
+    return true;
+  }
+  })
+
+ Template.home.rendered = function(){
+  // $('li').slideDown();
+ }
+
+
+
+}
