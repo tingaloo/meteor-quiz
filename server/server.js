@@ -60,32 +60,26 @@ if (Meteor.isServer){
     });
   }
 
-  if (QuestionList3.find().count() === 0) {
-  names = [
-      ["Don't overthink the think, overdo the __",
-      "do"],
-      ["What is the acronym for an all javascript stack?",
-      "mean"],
-      ["A surreal point and click adventure that follows a man and his dog",
-      "kentucky route zero"],
-      ["Brooklyn's favorite vegetable, hint: use Bing",
-      "pizza"],
-      ["Who will be the next president? hint: he's rich","donald trump"],
-      ["A podcast that airs after Car Talk on NPR",
-      "wait wait don't tell me"],
-      ["The most popular *nix system",
-      'osx'],
-      ["He fought the world, and her exes",
-      "scott pilgrim"]
+  //Load response list.
+  if (CorrectNotifications.find().count() === 0) {
+  var responses = [
+      ["Correct!"],
+      ["Nice!"],
+      ["Right!"],
+      ["Close enough!"],
+      ["Got em!"],
+      ["Yup!"],
+      ["Yah!"],
+      ["Mhm"]
     ];
 
-    _.each(names, function (name) {
-      QuestionList3.insert({
-        question: name[0],
-        answer: name[1]
+    _.each(responses, function (response) {
+      CorrectNotifications.insert({
+        response: response[0]
       });
     });
   }
+
 
 });
 
@@ -95,6 +89,9 @@ if (Meteor.isServer){
   },
   "getQuestionSetTwo":function(){
     return QuestionList2.find().fetch();
+  },
+  "loadCorrectNotifications":function(){
+    return CorrectNotifications.find().fetch();
   }
   });
 }

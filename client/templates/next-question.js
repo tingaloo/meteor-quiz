@@ -42,6 +42,7 @@ answerAnimate = function(correct){
       currentIndex++;
       template.find("form").reset();
 
+
       //green box hover
       answerAnimate("correct");
 
@@ -60,8 +61,10 @@ answerAnimate = function(correct){
   var $newcircle = '<span class="circle"></span>';
 
 nextQuestion = function(num){
-
-  $('.question-header').slideUp("300");
+  Session.set("notification", myCorrectNotifications[Math.floor(Math.random() * myCorrectNotifications.length)]);
+  $('.question-header').slideUp("300", function(){
+    $('.notification').toggle();
+  });
 
   $('.question').slideUp("300", function() {
 
@@ -70,8 +73,9 @@ nextQuestion = function(num){
     Session.set("questionNumber",currentIndex + 1);
     Session.set("nextQuestion", currentQuestion);
 
-    $('.progress-bar').append($newcircle);
 
+      Session.set("notification", " ");
+    $('.progress-bar').append($newcircle);
     $('p').fadeIn();
     $('h2').fadeIn();
   });

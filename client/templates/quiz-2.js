@@ -5,6 +5,7 @@ if (Meteor.isClient) {
     Template.quiz2.rendered= function(){
 
       grabQuestionSet("Two");
+      loadCorrectNotifications();
       Session.set("questionNumber", 1);
   }
 
@@ -14,6 +15,9 @@ if (Meteor.isClient) {
     },
     Number: function(){
       return Session.get("questionNumber");
+    },
+    Notification: function(){
+      return Session.get("notification");
     }
   });
 
@@ -32,6 +36,8 @@ if (Meteor.isClient) {
       startQuizAnimate();
 
       myQuestions =grabQuestionSet("Two");
+      myCorrectNotifications =loadCorrectNotifications();
+      Session.set("notification", " ");
       currentIndex=0;
           initializeQuestions(myQuestions);
     }

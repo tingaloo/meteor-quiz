@@ -4,6 +4,7 @@ if (Meteor.isClient) {
     Template.quiz.rendered= function(){
 
       grabQuestionSet("One");
+      loadCorrectNotifications();
       Session.set("questionNumber", 1);
   }
 
@@ -15,6 +16,9 @@ if (Meteor.isClient) {
     },
     Number: function(){
       return Session.get("questionNumber");
+    },
+    Notification: function(){
+      return Session.get("notification");
     }
 
   });
@@ -27,7 +31,9 @@ if (Meteor.isClient) {
       var currentQuestion = myQuestions[currentIndex];
       var output = checkAnswer(answer, currentQuestion, myQuestions, template);
 
-
+      Session.set("answerSubmitted", true);
+      // $('.notification').slideUp("300");
+      // Session.set("answerSubmitted", false);
       console.log(currentQuestion.question);
     },
 
@@ -37,6 +43,12 @@ if (Meteor.isClient) {
 
       //loads questions
       myQuestions =grabQuestionSet("One");
+      myCorrectNotifications =loadCorrectNotifications();
+      Session.set("notification", " ");
+
+    //   var correctNotification= myNotifications[0];
+    // Session.set("notification",correctNotification.response);
+    // initializeCorrectResponses(myNotifications);
       currentIndex=0;
       initializeQuestions(myQuestions);
     }
@@ -45,6 +57,7 @@ if (Meteor.isClient) {
   Template.quiz.startQuiz = function(){
     return Session.get("quizStarted");
   }
+
 
 
 }
